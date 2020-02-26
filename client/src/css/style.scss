@@ -1,0 +1,84 @@
+// styles.scss
+body {
+  background-color: rgb(255, 255, 255);
+}
+.Nav {
+  .li {
+    font-size: 20px;
+  }
+}
+
+.footer {
+  background-color: rgba(12, 9, 9, 0.836);
+}
+
+.bgImage {
+  font-family: cursive;
+  font-size: 30px;
+}
+.card {
+  background-color: #dae0e2;
+}
+
+.page {
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: justify;
+  text-justify: inter-word;
+  @media screen and (max-width: 700px) {
+    font-size: 16px;
+  }
+  .heading {
+    font-size: 40px;
+    font-weight: lighter;
+    text-decoration: underline;
+    @media screen and (max-width: 700px) {
+      font-size: 30px;
+    }
+  }
+}
+.homeTitle {
+  font-size: 50px;
+  @media screen and (max-width: 400px) {
+    font-size: 40px;
+  }
+}
+.navImage {
+  width: 200px;
+
+  @media screen and (max-width: 700px) {
+    width: 100px;
+  }
+}
+
+.homeCards {
+  transition: transform 0.4s;
+  &:hover {
+    cursor: pointer;
+    border: 2px solid black;
+  }
+}
+
+.link {
+  color: blue;
+  &:hover {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+  }
+}
+
+// create page
+.createPage {
+  height: 80vh;
+  padding-top: 2in;
+  h1 {
+    cursor: pointer;
+  }
+  select {
+    cursor: pointer;
+    option {
+      cursor: pointer;
+    }
+  }
+}

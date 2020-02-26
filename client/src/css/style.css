@@ -1,0 +1,105 @@
+body {
+  background-color: white;
+}
+
+.Nav .li {
+  font-size: 20px;
+}
+
+.footer {
+  background-color: rgba(12, 9, 9, 0.836);
+}
+
+.bgImage {
+  font-family: cursive;
+  font-size: 30px;
+}
+
+.card {
+  background-color: #dae0e2;
+}
+
+.page {
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+@media screen and (max-width: 700px) {
+  .page {
+    font-size: 16px;
+  }
+}
+
+.page .heading {
+  font-size: 40px;
+  font-weight: lighter;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 700px) {
+  .page .heading {
+    font-size: 30px;
+  }
+}
+
+.homeTitle {
+  font-size: 50px;
+}
+
+@media screen and (max-width: 400px) {
+  .homeTitle {
+    font-size: 40px;
+  }
+}
+
+.navImage {
+  width: 200px;
+}
+
+@media screen and (max-width: 700px) {
+  .navImage {
+    width: 100px;
+  }
+}
+
+.homeCards {
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
+}
+
+.homeCards:hover {
+  cursor: pointer;
+  border: 2px solid black;
+}
+
+.link {
+  color: blue;
+}
+
+.link:hover {
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+
+.createPage {
+  height: 80vh;
+  padding-top: 2in;
+}
+
+.createPage h1 {
+  cursor: pointer;
+}
+
+.createPage select {
+  cursor: pointer;
+}
+
+.createPage select option {
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */
