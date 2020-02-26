@@ -7,10 +7,12 @@ const Blog = require("./router/Blog");
 const User = require("./router/User");
 const bodyParser = require("body-parser");
 const AppErr = require("./utils/appErr");
+const Compression = require("compression");
+
 const GlobalAppError = require("./controller/globalErr");
 const app = express();
 app.use(bodyParser.json());
-
+app.use(Compression());
 app.use("/Home", Home);
 app.use("/Article", Article);
 app.use("/Essay", Essay);
