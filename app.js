@@ -8,6 +8,7 @@ const User = require("./router/User");
 const bodyParser = require("body-parser");
 const AppErr = require("./utils/appErr");
 const Compression = require("compression");
+const path = require("path");
 
 const GlobalAppError = require("./controller/globalErr");
 const app = express();
