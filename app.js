@@ -13,15 +13,7 @@ const cors = require("cors");
 const GlobalAppError = require("./controller/globalErr");
 const app = express();
 app.use(cors());
-// Step 3
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
 
-  app.get("/*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", "build", "index.html")); // relative path
-  });
-}
-app.use(bodyParser.json());
 // app.use(Compression());
 
 app.use("/Home", Home);
@@ -35,6 +27,15 @@ app.all("*", (req, res, next) => {
   (err.status = "true"), (err.statusCode = 404);
   next(new AppErr("page not found", 400));
 });
+// Step 3
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+
+  app.get("/*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html")); // relative path
+  });
+}
+app.use(bodyParser.json());
 
 app.use(GlobalAppError);
 module.exports = app;
