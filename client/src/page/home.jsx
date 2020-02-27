@@ -23,6 +23,9 @@ export default class home extends Component {
           Article: e.dataArticle,
           Blog: e.dataBlog,
         });
+      })
+      .catch(e => {
+        console.log(e);
       });
   }
 
