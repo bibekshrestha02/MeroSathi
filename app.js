@@ -7,9 +7,9 @@ const Blog = require("./router/Blog");
 const User = require("./router/User");
 const bodyParser = require("body-parser");
 const AppErr = require("./utils/appErr");
-const Compression = require("compression");
+// const Compression = require("compression");
 const path = require("path");
-
+const cors = require("cors");
 const GlobalAppError = require("./controller/globalErr");
 const app = express();
 // Step 3
@@ -21,7 +21,8 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 app.use(bodyParser.json());
-app.use(Compression());
+// app.use(Compression());
+app.use(cors());
 app.use("/Home", Home);
 app.use("/Article", Article);
 app.use("/Essay", Essay);
