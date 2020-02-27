@@ -6,7 +6,7 @@
   "scripts": {
     "start": " node server.js",
     "start-dev": " nodemon server.js",
-    "heroku-postbuild": "cd client && npm install && npm run build",
+    "heroku-postbuild": "cd client && npm install && npm install && npm run build",
     "dev": "concurrently \"npm run start\" \"npm run client\""
   },
   "author": "Bibek Shrestha",
