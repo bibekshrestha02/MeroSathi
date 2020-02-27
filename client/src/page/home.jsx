@@ -17,16 +17,12 @@ export default class home extends Component {
     fetch("/Home")
       .then(res => res.json())
       .then(e => {
-        console.log(e);
         this.setState({
           loading: true,
           Essay: e.dataEssay,
           Article: e.dataArticle,
           Blog: e.dataBlog,
         });
-      })
-      .catch(e => {
-        console.log(e);
       });
   }
 
