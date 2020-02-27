@@ -12,6 +12,7 @@ const path = require("path");
 const cors = require("cors");
 const GlobalAppError = require("./controller/globalErr");
 const app = express();
+app.use(cors());
 // Step 3
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -22,7 +23,7 @@ if (process.env.NODE_ENV === "production") {
 }
 app.use(bodyParser.json());
 // app.use(Compression());
-app.use(cors());
+
 app.use("/Home", Home);
 app.use("/Article", Article);
 app.use("/Essay", Essay);
