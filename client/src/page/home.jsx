@@ -17,6 +17,7 @@ export default class home extends Component {
     fetch("/Home")
       .then(res => res.json())
       .then(e => {
+        console.log(e);
         this.setState({
           loading: true,
           Essay: e.dataEssay,
