@@ -15,7 +15,7 @@ export default function cards(props) {
           <hr />
           <p className='card-text'>{props.head}</p>
           <a
-            href={"/Blog/" + props.id}
+            href={"/BlogPage/" + props.id}
             className='card-link btn btn-warning float-right'>
             Read More
           </a>
@@ -30,7 +30,7 @@ export default function cards(props) {
           <hr />
           <p className='card-text'>{props.head}</p>
           <a
-            href={"/Article/" + props.id}
+            href={"/ArticlePage/" + props.id}
             className='card-link btn btn-warning float-right'>
             Read More
           </a>
@@ -47,7 +47,7 @@ export default function cards(props) {
             {props.head}
           </p>
           <a
-            href={"/Essay/" + props.id}
+            href={"/EssayPage/" + props.id}
             className='card-link btn btn-warning float-right'>
             Read More
           </a>

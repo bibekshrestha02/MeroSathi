@@ -84,19 +84,19 @@ class app extends Component {
             />
             <Route
               exact
-              path='/Article/:id'
+              path='/ArticlePage/:id'
               render={rout => <ArticleContent id={rout.match.params.id} />}
             />
 
             <Route
               exact
-              path='/Essay/:id'
+              path='/EssayPage/:id'
               render={rout => (
                 <EssayContent id={rout.match.params.id} />
               )}></Route>
             <Route
               exact
-              path='/Blog/:id'
+              path='/BlogPage/:id'
               render={rout => <BlogContent id={rout.match.params.id} />}
             />
             <Route path='/*' component={Home} />

@@ -44,7 +44,7 @@ export default function cards(props) {
               Update
             </a>
             <a
-              href={"/Blog/" + props.id}
+              href={"/BlogPage/" + props.id}
               className='card-link btn btn-warning '>
               Read More
             </a>
@@ -71,7 +71,7 @@ export default function cards(props) {
               Update
             </a>
             <a
-              href={"/Article/" + props.id}
+              href={"/ArticlePage/" + props.id}
               className='card-link btn btn-warning '>
               Read More
             </a>
@@ -101,7 +101,7 @@ export default function cards(props) {
               Update
             </a>
             <a
-              href={"/Essay/" + props.id}
+              href={"/EssayPage/" + props.id}
               className='card-link btn btn-warning '>
               Read More
             </a>
