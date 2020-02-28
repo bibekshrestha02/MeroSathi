@@ -4,6 +4,7 @@ const app = require("./app");
 const mongoose = require("mongoose");
 const path = require("path");
 dotenv.config({ path: "./config.env" });
+const port = process.env.PORT || 9000;
 
 const mongoDB = process.env.Mongo_Db.replace(
   "<password>",
@@ -23,14 +24,12 @@ mongoose
     console.log("Internal Server Error", e);
   });
 
-// if (process.env.NODE_ENV === "production") {
-//   // app.use(express.static("client/build"));
-
-//   app.get("*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "client", "build", "index.html")); // relative path
-//   });
-// }
-const port = process.env.PORT || 9000;
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html")); // relative path
+  });
+}
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });
