@@ -8,7 +8,7 @@ const User = require("./router/User");
 const bodyParser = require("body-parser");
 const AppErr = require("./utils/appErr");
 // const Compression = require("compression");
-// const path = require("path");
+const path = require("path");
 const cors = require("cors");
 const GlobalAppError = require("./controller/globalErr");
 const app = express();
@@ -27,6 +27,10 @@ app.all("*", (req, res, next) => {
   const err = new Error();
   (err.status = "true"), (err.statusCode = 404);
   next(new AppErr("page not found", 400));
+});
+
+app.use((req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html")); // relative path
 });
 
 app.use(GlobalAppError);
