@@ -99,7 +99,7 @@ class app extends Component {
               path='/Blog/:id'
               render={rout => <BlogContent id={rout.match.params.id} />}
             />
-            <Route path='*' component={Home} />
+            <Route path='/*' component={Home} />
           </Switch>
           <Footer />
         </Router>
