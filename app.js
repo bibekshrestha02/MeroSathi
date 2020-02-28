@@ -18,6 +18,13 @@ app.use(bodyParser.json());
 app.use(express.static("client/build"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+if (process.env.NODE_ENV === "production") {
+  // app.use(express.static("client/build"));
+  app.all((req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html")); // relative path
+  });
+}
+
 app.use("/Home", Home);
 app.use("/Article", Article);
 app.use("/Essay", Essay);
