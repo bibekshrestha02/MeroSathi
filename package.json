@@ -4,10 +4,12 @@
   "description": "MeroSathi my first project",
   "main": "server.js",
   "scripts": {
+    "client-install": "npm install --prefix client",
     "start": " node server.js",
     "start-dev": " nodemon server.js",
-    "heroku-postbuild": "cd client && npm install && npm install && npm run build",
-    "dev": "concurrently \"npm run start\" \"npm run client\""
+    "server": "nodemon server.js --exec babel-node --presets babel-preset-env",
+    "client": "npm start --prefix client",
+    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
   },
   "author": "Bibek Shrestha",
   "license": "ISC",
