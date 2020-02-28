@@ -27,6 +27,10 @@ app.all("*", (req, res, next) => {
   (err.status = "true"), (err.statusCode = 404);
   next(new AppErr("page not found", 400));
 });
+
+app.use(bodyParser.json());
+
+app.use(GlobalAppError);
 // Step 3
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "build")));
@@ -35,7 +39,4 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(__dirname, "client", "build", "index.html")); // relative path
   });
 }
-app.use(bodyParser.json());
-
-app.use(GlobalAppError);
 module.exports = app;
