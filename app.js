@@ -16,7 +16,13 @@ app.use(cors());
 app.use(bodyParser.json());
 // app.use(Compression());
 // Step 3
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
 
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html")); // relative path
+  });
+}
 app.use("/Home", Home);
 app.use("/Article", Article);
 app.use("/Essay", Essay);
@@ -30,13 +36,5 @@ app.all("*", (req, res, next) => {
 });
 
 app.use(GlobalAppError);
-
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html")); // relative path
-  });
-}
 
 module.exports = app;
