@@ -30,7 +30,7 @@ app.all("*", (req, res, next) => {
   next(new AppErr("page not found", 400));
 });
 if (process.env.NODE_ENV === "production") {
-  app.all((req, res) => {
+  app.get("/*", (req, res) => {
     res.sendFile(path.join(__dirname, "client", "build", "index.html")); // relative path
   });
 }
