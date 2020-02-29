@@ -16,12 +16,8 @@ const app = express();
 // app.use(cors());
 app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("client/build"));
 
-if (process.env.NODE_ENV === "production") {
-  app.get("/*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", "build", "index.html")); // relative path
-  });
-}
 app.use("/Home", Home);
 app.use("/Article", Article);
 app.use("/Essay", Essay);
@@ -33,8 +29,12 @@ app.all("*", (req, res, next) => {
   (err.status = "true"), (err.statusCode = 404);
   next(new AppErr("page not found", 400));
 });
-app.use(express.static("client/build"));
 
+// if (process.env.NODE_ENV === "production") {
+//   app.get("/*", (req, res) => {
+//     res.sendFile(path.join(__dirname, "client", "build", "index.html")); // relative path
+//   });
+// }
 app.use(GlobalAppError);
 
 module.exports = app;
