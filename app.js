@@ -7,13 +7,14 @@ const Blog = require("./router/Blog");
 const User = require("./router/User");
 const bodyParser = require("body-parser");
 const AppErr = require("./utils/appErr");
+const cors = require("cors");
 // const Compression = require("compression");
 // const path = require("path");
 const cors = require("cors");
 const GlobalAppError = require("./controller/globalErr");
 const app = express();
 
-// app.use(cors());
+app.use(cors());
 app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("client/build"));
