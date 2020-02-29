@@ -10,7 +10,7 @@ const AppErr = require("./utils/appErr");
 const cors = require("cors");
 // const Compression = require("compression");
 // const path = require("path");
-const cors = require("cors");
+
 const GlobalAppError = require("./controller/globalErr");
 const app = express();
 
