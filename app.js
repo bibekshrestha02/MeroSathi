@@ -15,7 +15,6 @@ const app = express();
 
 // app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static("client/build"));
 // app.use(bodyParser.urlencoded({ extended: true }));
 
 if (process.env.NODE_ENV === "production") {
@@ -34,6 +33,7 @@ app.all("*", (req, res, next) => {
   (err.status = "true"), (err.statusCode = 404);
   next(new AppErr("page not found", 400));
 });
+app.use(express.static("client/build"));
 
 app.use(GlobalAppError);
 
